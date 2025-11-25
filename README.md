@@ -3,8 +3,8 @@
 Sistema de recomendacion binaria para Yelp utilizando un grafo heterogeneo y un modelo HGT (Heterogeneous Graph Transformer). El proyecto incluye notebooks para explorar datos, preparar el grafo, entrenar y evaluar el modelo, y checkpoints preentrenados para evitar tiempos largos de computo.
 
 ## Estructura del repo
-- grafos_script.ipynb: notebook principal. Carga datos, arma el grafo heterogeneo, entrena el modelo HGT y evalua. Incluye celdas "cambios nico" para usar el modelo ya entrenado y generar metricas/graficos sin reentrenar.
-- EDA_yelp.ipynb: analisis exploratorio inicial.
+- grafos_script.ipynb: notebook principal. Carga datos, arma el grafo heterogeneo, entrena el modelo HGT y evalua. 
+- EDA_yelp.ipynb: analisis exploratorio.
 - notebook_prueba.ipynb: pruebas varias.
 - modelo_yelp_philly.pth: checkpoint principal preentrenado (Filadelfia).
 - modelo_yelp.pth, modelo_yelp2.pth: otros checkpoints.
