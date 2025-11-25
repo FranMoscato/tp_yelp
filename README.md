@@ -23,21 +23,21 @@ Sistema de recomendacion binaria para Yelp utilizando un grafo heterogeneo y un 
 ## Dataset
 1. Descarga desde el link de Drive: https://drive.google.com/drive/folders/184GClZ2W_wJVtyN8Vrzdgp7yz3-UY1CH?usp=drive_link
 2. Copia los cuatro archivos listados arriba dentro de yelp_dataset/ en la raiz del repo.
-3. Si no usas reviews_con_embeddings.pkl, el notebook puede recalcular embeddings con SentenceTransformer("all-MiniLM-L6-v2"), pero tarda bastante.
+3. Si no usas reviews_con_embeddings.pkl, el notebook puede recalcular embeddings con SentenceTransformer("all-MiniLM-L6-v2"), pero el tiempo de corrida es considerablemente superior.
 
 ## Como correr usando el modelo preentrenado (rapido)
 1. Abre grafos_script.ipynb.
 2. Ejecuta las celdas de carga y preparacion de datos (hasta antes del loop de entrenamiento). Esto arma el grafo y las etiquetas.
 3. Salta el loop de entrenamiento (80 epocas).
-4. Utiliza el modelo preentrenado modelo_yelp_philly.pth
-   - Carga el checkpoint modelo_yelp_philly.pth. Podes calcular metricas como Accuracy, Recall positivo/negativo, AUC, Recall@K en train/val/test.
-5. Con eso podes obtener resultados finales sin reentrenar.
+4. Utiliza el modelo preentrenado modelo_yelp_philly.pth (Con eso podes obtener resultados finales sin reentrenar)
+   - Carga el checkpoint modelo_yelp_philly.pth. Se podrian calcular metricas como Accuracy, Recall positivo/negativo, AUC, Recall@K en train/val/test.
+
 
 ## Como entrenar desde cero (completo)
 1. Asegura que yelp_dataset/ contiene los archivos JSON y el reviews_con_embeddings.pkl (o recalcula embeddings si lo eliminas).
 2. Abre grafos_script.ipynb y ejecuta secuencialmente todas las celdas hasta el loop de entrenamiento.
 3. Ejecuta el loop de entrenamiento (80 epocas) para obtener performance_acc y performance_recall_neg y, si lo deseas, volver a guardar un nuevo checkpoint (modelo_yelp_philly.pth).
-4. Ejecuta las celdas de metricas y graficos (incluidas las "cambios nico") para ver resultados.
+
 
 ## Notas
 - El loop de entrenamiento es lo mas costoso; si quieres curvas por epoca, debes ejecutarlo (puedes reducir epocas para pruebas).
